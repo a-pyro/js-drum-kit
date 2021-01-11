@@ -1,7 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
 
-body {
+body,
+html {
     background: #333;
     color: #f3f3f3;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'MuseoModerno', sans-serif;
+}
+
+body {
+    background: url('bg-wall.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+}
+
+.key {
+    border: 0.2rem solid black;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+    background-color: rgba(0, 0, 0, 0.4);
+    flex-direction: column;
+    user-select: none;
+    text-shadow: 0 0 0.5rem black;
+    transition: all 0.07s ease;
+}
+
+.sound {
+    color: #f5d300;
+    font-size: 0.6rem;
+}
+kbd {
+    font-family: monospace;
+    text-transform: uppercase;
+}
+
+.playing {
+    transform: scale(1.1);
+    border-color: #fe6b35;
+    box-shadow: 0 0 1rem #fe6b35;
 }
