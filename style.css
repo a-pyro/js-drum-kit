@@ -17,7 +17,7 @@ body {
 }
 
 .key {
-    border: 0.2rem solid black;
+    border: 0.1rem solid black;
     border-radius: 50%;
     height: 70px;
     width: 70px;
@@ -32,9 +32,13 @@ body {
     transition: all 0.07s ease;
 }
 
-.sound {
+.sound,
+
+/* text inside rec play */
+i + span {
     color: #f5d300;
     font-size: 0.6rem;
+    user-select: none;
 }
 kbd {
     font-family: monospace;
@@ -45,4 +49,29 @@ kbd {
     transform: scale(1.1);
     border-color: #fe6b35;
     box-shadow: 0 0 1rem #fe6b35;
+}
+
+#rec,
+#play {
+    transition: all 0.1s ease;
+}
+
+#rec:hover,
+#play:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    text-shadow: 0 0 1rem #fe6b35;
+}
+
+#rec:active,
+#play:active {
+    transform: scale(1);
+}
+/* 
+#play.playing {
+} */
+
+#rec.recording {
+    color: #fe6b35;
+    transition: all 0.5s ease;
 }
