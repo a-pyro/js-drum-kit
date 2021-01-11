@@ -52,26 +52,44 @@ kbd {
 }
 
 #rec,
-#play {
+#play,
+#delete {
     transition: all 0.1s ease;
 }
 
 #rec:hover,
-#play:hover {
+#play:hover,
+#delete:hover {
     transform: scale(1.1);
     cursor: pointer;
     text-shadow: 0 0 1rem #fe6b35;
 }
 
 #rec:active,
-#play:active {
+#play:active,
+#delete:active {
     transform: scale(1);
 }
 /* 
 #play.playing {
 } */
 
+@keyframes recOn {
+    0% {
+        color: #f3f3f3;
+        text-shadow: 0 0 0;
+    }
+
+    100% {
+        color: #fe6b35;
+
+        text-shadow: 0 0 1rem #fe6b35;
+    }
+}
+
 #rec.recording {
-    color: #fe6b35;
-    transition: all 0.5s ease;
+    /* color: #fe6b35; */
+    /* transition: all 0.5s ease; */
+    animation: recOn 1s infinite ease-in-out;
+    animation-direction: alternate;
 }
