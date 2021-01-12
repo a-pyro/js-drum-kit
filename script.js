@@ -8,23 +8,30 @@ const rec = document.querySelector('#rec');
 const play = document.querySelector('#play');
 const canc = document.querySelector('#delete');
 
+let i = -1;
+const playSequence = () => {
+    if (playedKeys.length) {
+        i++;
+        if (i === playedKeys.length) {
+            i = -1;
+            playedKeys.forEach(sound =>
+                sound.removeEventListener('ended', playSequence)
+            );
+        }
+        playedKeys[i].addEventListener('ended', playSequence);
+        playedKeys[i].play();
+    } else {
+        console.log('nothing to play');
+    }
+};
 // empty array if delete
 canc.addEventListener('click', () => {
     playedKeys.length = 0;
+    i = -1;
     console.log(playedKeys);
 });
 
-// let i = -1;
-// const playSequence = () => {
-//     i++;
-//     if (i === playedKeys.length) {
-//         i = -1;
-//     }
-//     playedKeys[i].addEventListener('ended', playSequence);
-//     playedKeys[i].play();
-// };
-
-// play.addEventListener('click', playSequence);
+play.addEventListener('click', playSequence);
 
 rec.addEventListener('click', function () {
     if (!recording) {
